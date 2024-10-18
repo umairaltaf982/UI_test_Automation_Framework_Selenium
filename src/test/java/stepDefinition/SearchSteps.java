@@ -12,9 +12,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
 
 import java.io.ByteArrayInputStream;
 
+@Test(priority = 2)
 public class SearchSteps extends BaseTest {
 
     String url = "https://www.khazanay.pk/";

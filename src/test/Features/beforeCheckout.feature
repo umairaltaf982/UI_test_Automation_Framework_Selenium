@@ -1,7 +1,9 @@
-Feature: Selecting the products in Cart before Checkout
+Feature: Filling the checkout form
 
-  Scenario: Navigating to Checkout Page Successfully
-    Given User is on the shopping cart page
-    When User enter a random message
-    And clicks the checkout button
-    Then Checkout page will appear
+  Scenario: Order is not placed successfully
+    Given User is on checkout page
+    When User fills the form
+    And clicks the complete order button
+    Then Checkout successfully
+
+  @regression
