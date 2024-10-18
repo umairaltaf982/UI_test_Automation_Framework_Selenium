@@ -1,22 +1,28 @@
 package stepDefinition;
 
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.qameta.allure.Allure;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 
 import java.io.ByteArrayInputStream;
 
+public class LoginSteps extends BaseTest {
 
-public class LoginSteps {
-    WebDriver driver = new ChromeDriver();
     String url = "https://member.daraz.pk/user/login?redirect=https%3A%2F%2Fmember.daraz.pk%2Fuser%2Fprofile";
 
+    @Before
+    public void setUpScenario() {
+        setUp();
+    }
 
     @Given("User is on login page")
     public void user_is_on_login_page() {
@@ -40,8 +46,6 @@ public class LoginSteps {
     public void user_is_navigated_to_home_page() {
         if (!driver.getCurrentUrl().equals(url)) {
             user_enters_username_and_password();
-        } else {
-            return;
         }
     }
 
@@ -51,13 +55,8 @@ public class LoginSteps {
             byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             Allure.addAttachment("Failed Screenshot", new ByteArrayInputStream(screenshot));
         } else {
-            // Optionally, take a screenshot or just log the result.
             byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             Allure.addAttachment("Passed Screenshot", new ByteArrayInputStream(screenshot));
         }
-
-        driver.quit();
     }
-
-
 }
