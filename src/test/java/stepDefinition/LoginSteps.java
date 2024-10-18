@@ -24,7 +24,6 @@ public class LoginSteps extends BaseTest {
     String url = "https://www.khazanay.pk/account/login";
     List<String[]> csvData; // List to store data from CSV
 
-    String url = "https://www.khazanay.pk/account/login?srsltid=AfmBOooMsNU-lSbEr1ALhsmsyGQvDbvv0BRte9STfiQIzb3V8Pf31hdI";
 
 
     @Before
