@@ -17,7 +17,7 @@ import java.io.ByteArrayInputStream;
 
 public class LoginSteps extends BaseTest {
 
-    String url = "https://member.daraz.pk/user/login?redirect=https%3A%2F%2Fmember.daraz.pk%2Fuser%2Fprofile";
+    String url = "https://www.khazanay.pk/account/login?srsltid=AfmBOooMsNU-lSbEr1ALhsmsyGQvDbvv0BRte9STfiQIzb3V8Pf31hdI";
 
     @Before
     public void setUpScenario() {
@@ -31,15 +31,15 @@ public class LoginSteps extends BaseTest {
 
     @When("User enters username and password")
     public void user_enters_username_and_password() {
-        WebElement email = driver.findElement(By.cssSelector("input[type='text']"));
+        WebElement email = driver.findElement(By.cssSelector("#CustomerEmail"));
         email.sendKeys("f223737@cfd.nu.edu.pk");
-        WebElement password = driver.findElement(By.cssSelector("input[type='password']"));
+        WebElement password = driver.findElement(By.cssSelector("#CustomerPassword"));
         password.sendKeys("abc@12345");
     }
 
     @And("click on login button")
     public void click_on_login_button() {
-        driver.findElement(By.cssSelector("button[type='submit']")).click();
+        driver.findElement(By.cssSelector("#customer_login > div.t4s_field.t4s_mb_20 > button")).click();
     }
 
     @Then("User is navigated to home page")

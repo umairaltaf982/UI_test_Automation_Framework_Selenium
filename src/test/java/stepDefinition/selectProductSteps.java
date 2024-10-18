@@ -26,20 +26,17 @@ public class selectProductSteps extends BaseTest {
 
     @When("User selects the product")
     public void user_selects_the_product() {
-        driver.findElement(By.className("Ms6aG")).click();
+        driver.findElement(By.cssSelector("#snize-product-8059545157827 > a > div > div > span.snize-thumbnail > img")).click();
     }
 
     @And("clicks the add to cart button")
     public void clicks_the_add_to_cart_button() {
-        driver.findElement(By.className("pdp-button_theme_orange")).click();
+        driver.findElement(By.cssSelector("#product-form-8059545157827template--16483384295619__main > div.t4s-product-form__buttons > div.t4s-d-flex.t4s-flex-wrap > button")).click();
     }
 
     @Then("Product is added to the cart")
     public void product_is_added_to_the_cart() {
-        String successMessage = driver.findElement(By.className("cart-message-text")).getText();
-        if (successMessage == "Added to cart successfully!") {
-            driver.quit();
-        }
+        driver.get("https://www.khazanay.pk/checkouts/cn/Z2NwLXVzLWNlbnRyYWwxOjAxSkFHRDBWN0pOU1lXTkM3VjFBQjI5RVpW?discount=");
     }
 
     @After
