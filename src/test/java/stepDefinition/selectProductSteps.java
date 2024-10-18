@@ -8,6 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.qameta.allure.Allure;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -37,6 +38,8 @@ public class selectProductSteps extends BaseTest {
     @Then("Product is added to the cart")
     public void product_is_added_to_the_cart() {
         driver.get("https://www.khazanay.pk/checkouts/cn/Z2NwLXVzLWNlbnRyYWwxOjAxSkFHRDBWN0pOU1lXTkM3VjFBQjI5RVpW?discount=");
+       String currentUrl = driver.getCurrentUrl();
+        Assert.assertTrue("Product is not added to the cart", currentUrl.contains("checkouts"));
     }
 
     @After
