@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
@@ -39,6 +40,7 @@ public class beforeCheckoutSteps extends BaseTest {
 
     @Then("Checkout successfully")
     public void checkout_page_will_appear() {
-
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertTrue("Checkout page did not appear", currentUrl.contains("checkouts"));
     }
 }
