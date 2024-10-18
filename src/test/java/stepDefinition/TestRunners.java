@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "junit:target/JUnitReport.xml",
                 "pretty", "json:target/JsonReport.json",
                 "pretty", "html:target/HtmlReport.html",
-                "pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}
+                "pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
+        tags = "@high"
 )
 public class TestRunners {
 

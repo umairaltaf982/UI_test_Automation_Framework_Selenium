@@ -12,9 +12,11 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.Test;
 
 import java.io.ByteArrayInputStream;
 
+@Test(priority = 3)
 public class selectProductSteps extends BaseTest {
     @Before
     public void setUpScenario() {

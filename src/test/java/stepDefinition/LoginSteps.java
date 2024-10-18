@@ -14,16 +14,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
 
+
+@Test(priority = 1)
 public class LoginSteps extends BaseTest {
 
 
     String url = "https://www.khazanay.pk/account/login";
     List<String[]> csvData; // List to store data from CSV
-
 
 
     @Before
