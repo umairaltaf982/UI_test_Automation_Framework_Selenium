@@ -20,8 +20,12 @@ import java.util.List;
 
 public class LoginSteps extends BaseTest {
 
+
     String url = "https://www.khazanay.pk/account/login";
     List<String[]> csvData; // List to store data from CSV
+
+    String url = "https://www.khazanay.pk/account/login?srsltid=AfmBOooMsNU-lSbEr1ALhsmsyGQvDbvv0BRte9STfiQIzb3V8Pf31hdI";
+
 
     @Before
     public void setUpScenario() throws IOException {
@@ -33,6 +37,7 @@ public class LoginSteps extends BaseTest {
     public void user_is_on_login_page() {
         driver.get(url);
     }
+
 
     @When("user enters username and password from CSV")
     public void user_enters_username_and_password_from_csv() {
@@ -51,6 +56,7 @@ public class LoginSteps extends BaseTest {
             click_on_login_button(); // Call the method to click the login button
             user_is_navigated_to_home_page(); // Verify navigation to home page
         }
+
     }
 
     @And("click on login button")
