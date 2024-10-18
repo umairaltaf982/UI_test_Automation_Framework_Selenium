@@ -1,8 +1,8 @@
-Feature: feature to test login functionality
+Feature: Feature to test login functionality
 
-  Scenario: Check login is successful with valid credentials
+  Scenario: Check login is successful with valid credentials from CSV file
     Given User is on login page
-    When User enters username and password
+    When user enters username and password from CSV
     And click on login button
     Then User is navigated to home page
 
