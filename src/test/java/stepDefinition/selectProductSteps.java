@@ -11,39 +11,35 @@ import io.qameta.allure.Allure;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
 
 import java.io.ByteArrayInputStream;
 
-public class SearchSteps extends BaseTest {
-
-    String url = "https://member.daraz.pk/user/profile#/";
-
+public class selectProductSteps extends BaseTest {
     @Before
     public void setUpScenario() {
         setUp();
     }
 
-    @Given("User is on Dashboard page")
-    public void user_is_on_dashboard_page() {
-        driver.get(url);
+    @Given("User is on the product details page")
+    public void user_is_on_the_product_details_page() {
     }
 
-    @When("User enters search creditentials")
-    public void user_enters_search_creditentials() {
-        WebElement search = driver.findElement(By.cssSelector("input[type='search']"));
-        search.sendKeys("winter gloves");
+    @When("User selects the product")
+    public void user_selects_the_product() {
+        driver.findElement(By.className("Ms6aG")).click();
     }
 
-    @And("click on search button")
-    public void click_on_search_button() {
-        WebElement searchBtn = driver.findElement(By.className("search-box__button--1oH7"));
-        searchBtn.click();
+    @And("clicks the add to cart button")
+    public void clicks_the_add_to_cart_button() {
+        driver.findElement(By.className("pdp-button_theme_orange")).click();
     }
 
-    @Then("User is navigated to product related detail page")
-    public void user_is_navigated_to_product_related_detail_page() {
-        
+    @Then("Product is added to the cart")
+    public void product_is_added_to_the_cart() {
+        String successMessage = driver.findElement(By.className("cart-message-text")).getText();
+        if (successMessage == "Added to cart successfully!") {
+            driver.quit();
+        }
     }
 
     @After
@@ -56,4 +52,5 @@ public class SearchSteps extends BaseTest {
             Allure.addAttachment("Passed Screenshot", new ByteArrayInputStream(screenshot));
         }
     }
+
 }
