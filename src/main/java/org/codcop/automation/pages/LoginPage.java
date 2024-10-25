@@ -1,4 +1,4 @@
-package org.example.pages;
+package org.codcop.automation.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,6 +22,8 @@ public class LoginPage extends BasePage {
     public void login(String username, String password) {
         usernameField.sendKeys(username);
         passwordField.sendKeys(password);
+        usernameField.clear();
+        passwordField.clear();
         loginButton.submit();
 
     }

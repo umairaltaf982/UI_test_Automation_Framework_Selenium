@@ -1,5 +1,5 @@
 // BasePage.java
-package org.example.pages;
+package org.codcop.automation.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
